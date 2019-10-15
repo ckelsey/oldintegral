@@ -1,0 +1,67 @@
+@import '../../global/global.scss';
+
+:host {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+
+        .list-section,
+        .search-section {
+            display: block;
+            width: 100%;
+        }
+
+        .search-section {
+            padding: 4px 11px;
+        }
+
+        .item {
+            // font-size: 0%;
+            font: inherit;
+            color: inherit;
+            padding: 10px 20px;
+            width: 100%;
+            opacity: 0;
+            pointer-events: none;
+            overflow: hidden;
+            max-height: 100%;
+            transition:
+                opacity 0.4s ease-in-out,
+                font-size 0.4s ease-in-out,
+                max-height 0.4s ease-in-out,
+                padding 0.4s ease-in-out;
+
+            &.ready {
+                pointer-events: all;
+                opacity: 1;
+                // font-size: 100%;
+            }
+
+            &.hidden {
+                opacity: 0;
+                max-height: 0%;
+                pointer-events: none;
+                padding: 0px 20px;
+                font-size: 0%;
+            }
+
+            &.clickable {
+                cursor: pointer;
+
+                &:hover {
+                    background: transparentize($primary, 0.9)
+                }
+            }
+        }
+    }
+}

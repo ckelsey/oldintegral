@@ -1,0 +1,40 @@
+@import '../../global/global.scss';
+
+:host {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    h2 {
+        margin: 0px;
+        padding: 21px 0px;
+    }
+
+    .container {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    #content-section {
+        flex-direction: row;
+        display: flex;
+        height: 100%;
+    }
+
+    #sidebar {
+        max-width: 400px;
+        width: 25%;
+        overflow: hidden;
+        background: #dfdfdf;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    #content {
+        width: 300px;
+    }
+}

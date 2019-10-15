@@ -1,0 +1,373 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background: #272729;
+    color: #fff;
+    cursor: auto;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: .96875rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    padding: 61px 0px;
+}
+
+* {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.ck-dd {
+    position: relative;
+    display: inline-block;
+}
+
+.ck-dd-label {
+    display: inline-block;
+    appearance: none;
+    -webkit-appearance: none;
+    background: #3c3c3f;
+    border: none;
+    color: #fff;
+    padding: 7px 14px;
+}
+
+.ck-dd-label::before {
+    display: inline-block;
+    content: "";
+    border: 5px solid transparent;
+    border-top-color: #ffffff;
+    margin: 0px 7px 0px 0px;
+    position: relative;
+    top: 2px;
+}
+
+.ck-dd-list {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background: #46464a;
+    padding: 0px;
+    margin: 0px;
+}
+
+.ck-dd:hover .ck-dd-list {
+    display: block
+}
+
+.ck-dd-list li {
+    cursor: pointer;
+    list-style: none;
+    padding: 7px 14px;
+    margin: 0px;
+}
+
+.ck-dd-list li:hover {
+    background: #606065;
+}
+
+.framework-selector-bar {
+    width: 100%;
+    background: #111;
+    padding: 7px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+}
+
+/* CUSTOM */
+
+* {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+nav a, .gallery-item {
+    opacity: 0.9;
+    transition: opacity 0.1s;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+#header.navbar {
+    background: rgba(39, 39, 41, 0.93);
+}
+
+.content-container {
+    width: 100%;
+    max-width: 90%;
+    margin: auto;
+}
+
+.content-padding {
+    padding: .5rem 1rem;
+}
+
+#filter-results-count {
+    padding-left: 15px;
+}
+
+#filterOptions {
+    position: relative;
+}
+
+#filterOptionsInner .filter-option {
+    position: relative;
+    text-transform: capitalize;
+    padding: 10px;
+    z-index: 10;
+}
+
+#filterOptionsInner .filter-option .dropdown-toggle, .filter-option-options {
+    cursor: pointer;
+}
+
+.filter-option {
+    position: relative;
+}
+
+.filter-option-options {
+    min-width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+}
+
+#filterOptionsActions {
+    padding-left: 10px;
+}
+
+#view-type-buttons {
+    display: flex;
+}
+
+#view-type-buttons a {
+    display: block;
+    width: 30px;
+    cursor: pointer;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    transition: all 0.1s;
+    opacity: 0.5;
+}
+
+#view-type-buttons a:hover {
+    opacity: 0.8;
+}
+
+#view-type-buttons a.active {
+    opacity: 1;
+}
+
+#view-type-buttons a img {
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#gallery {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    grid-auto-flow: dense;
+    transition: all 0.1s;
+}
+
+#gallery.show-small {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+}
+
+#gallery.show-list {
+    display: block;
+}
+
+.gallery-item {
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+.gallery-item.loaded {
+    opacity: 0.9;
+}
+
+.gallery-item.loaded:hover {
+    opacity: 1;
+}
+
+#gallery.show-small .gallery-item {
+    font-size: 80%;
+}
+
+.gallery-item a {
+    display: block;
+    width: 100%;
+}
+
+.gallery-item a img {
+    display: block;
+    width: 100%;
+    border: 4px solid rgb(255, 255, 255);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.gallery-item.loaded:hover img {
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.25), 0px 0px 10px rgba(255, 255, 255, 0.25);
+}
+
+#gallery.show-list .gallery-item {
+    display: flex;
+    margin: 0px 0px 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#gallery.show-list .gallery-item a {
+    width: 12%;
+    min-width: 80px;
+    flex: 0 0 12%;
+}
+
+#gallery.show-list .gallery-item .item-text {
+    flex-grow: 1;
+    padding-left: 30px;
+}
+
+.gallery-item .item-title {
+    margin: 5px 2px 0px;
+}
+
+#gallery.show-list .gallery-item .item-title {
+    font-size: 115%;
+    margin: 0px 0px 10px;
+}
+
+.gallery-item .item-category {
+    margin: 0px 2px 5px;
+    font-size: 90%;
+}
+
+#gallery.show-list .gallery-item .item-category {
+    font-size: 100%;
+    margin: 10px 0px;
+}
+
+#gallery.show-list .gallery-item .item-category:before {
+    content: "Category: "
+}
+
+.gallery-item .item-description {
+    display: none;
+}
+
+#gallery.show-list .gallery-item .item-description {
+    display: block;
+    margin: 10px 0px;
+}
+
+.page-details #page-gallery, #page-details {
+    display: none;
+}
+
+.page-details #page-details {
+    display: block;
+}
+
+#messages {
+    max-width: 300px;
+    margin: auto;
+}
+
+#messages .alert>div {
+    padding-right: 20px;
+}
+
+#seasons, #detail-tabs .btn {
+    text-transform: capitalize;
+}
+
+/* OVERIDES */
+
+a.dropdown-toggle, #detail-tabs .btn {
+    text-decoration: none;
+}
+
+.dropdown-menu, .filter-option-options {
+    background: #1a1a1b;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.35);
+    border-radius: 2px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+
+.dropdown-menu .dropdown-item, .filter-option-options-option {
+    white-space: nowrap;
+    padding: 10px 20px;
+    min-width: 100%;
+    opacity: 0.9;
+    border-radius: 2px;
+    color: #fff;
+    display: block;
+    width: 100%;
+    font-weight: normal;
+    transition: all 0.1s;
+}
+
+.dropdown-menu .dropdown-item:hover, .filter-option-options-option:hover {
+    opacity: 1;
+    background: rgba(220, 53, 69, 0.7);
+}
+
+.dropdown-menu .dropdown-item.active, .filter-option-options-option.active {
+    opacity: 1;
+    background: rgba(220, 53, 69, 1);
+}
+
+#messages button.close {
+    line-height: 1rem;
+    float: none;
+    display: block;
+}
+
+#messages .alert {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+button {
+    outline: none !important;
+}
+
+a, a:hover {
+    color: inherit;
+}
+
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.btn, .btn.btn-sm {
+    font-size: .96875rem;
+}
+
+.btn.btn-link {
+    color: inherit;
+}

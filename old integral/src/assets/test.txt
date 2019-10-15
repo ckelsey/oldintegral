@@ -1,0 +1,74 @@
+const createChart = ()=>{
+                const chartLineContainer = document.body.querySelector(`.chart-line`)
+                const chartLine = document.createElement(`chart-line`)
+                chartLine.style.width = `200px`
+                chartLine.style.height = `50px`
+                chartLine.setAttribute(`x`, 1000)
+                chartLine.setAttribute(`y`, 100)
+                chartLine.setAttribute(`ybars`, 10)
+
+                chartLine.lines = [
+                    {
+                        label: `fps`,
+                        rangePoints: [0, 0, 1000, 100],
+                        color: `#085e8a`,
+                        data: []
+                    }, {
+                        label: `used memory`,
+                        rangePoints: [0, 0, 1000, 100],
+                        color: `#883042`,
+                        data: []
+                    }, {
+                        label: `total memory`,
+                        rangePoints: [0, 0, 1000, 100],
+                        color: `#ff9d00`,
+                        data: []
+                    }
+                ]
+
+                chartLineContainer.appendChild(chartLine)
+
+                let lastTime = performance.now()
+                let total = 0
+
+                const addPoints = () => {
+                    const now = performance.now()
+                    const duration = now - lastTime
+
+                    chartLine.getLines().forEach((line, index) => {
+                        switch (index) {
+                            case 0:
+                                line.push([
+                                    total + duration,
+                                    Math.round(Math.random() * 100)
+                                ])
+                                break
+                            case 1:
+                                line.push([
+                                    total + duration,
+                                    (performance.memory.usedJSHeapSize / 1024) / 1024
+                                ])
+                                break
+                            case 2:
+                                line.push([
+                                    total + duration,
+                                    (performance.memory.totalJSHeapSize / 1024) / 1024
+                                ])
+                                break
+                        }
+                    })
+
+                    lastTime = now
+                    total = total + duration
+
+                    if (total < 1000) {
+                        requestAnimationFrame(addPoints)
+                    }else{
+                        createChart()
+                    }
+                }
+
+                chartLine.addEventListener(`ready`, () => addPoints())
+            }
+
+            // createChart()

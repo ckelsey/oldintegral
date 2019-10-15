@@ -1,0 +1,42 @@
+@import '../../global/global.scss';
+
+:host {
+    display: inline-block;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    #image-viewer-container {
+        position: relative;
+        display: block;
+
+        image {
+            opacity: 0;
+            transition: opacity .2s;
+            // &.cache {
+            //     filter: url(#blur-effect);
+            // }
+        }
+
+        &.has-placeholder {
+            image {
+                opacity: 0;
+
+                &.placeholder {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &.loaded {
+            image {
+                opacity: 1;
+
+                &.placeholder {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

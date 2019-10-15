@@ -1,0 +1,32 @@
+@import '../../global/global.scss';
+
+:host {
+    pointer-events: none;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .underline {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 2px;
+        width: 100%;
+        background: $primary;
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0, 0);
+        transition:
+            transform-origin 0.2s ease-in-out,
+            width 0.2s ease-in-out,
+            left 0.2s ease-in-out,
+            transform 0.2s ease-in-out,
+            opacity 0.2s ease-in-out;
+    }
+
+    .active.container>.underline {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}

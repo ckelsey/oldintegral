@@ -1,0 +1,110 @@
+:host {
+    width: 0px;
+    height: 0px;
+    position: relative;
+    pointer-events: none;
+    z-index: 1;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .tooltip-container {
+        position: fixed;
+        top: 0px;
+        height: 0px;
+        transition: opacity 0.2s ease-in-out 0.1s;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        backface-visibility: hidden;
+
+        &.open {
+            opacity: 1;
+
+            .tooltip-content {
+                transform: scale(1, 1);
+
+                .tooltip-content-inner {
+                    pointer-events: all;
+                }
+            }
+        }
+
+        .tooltip-content {
+            transform: scale(0, 0);
+            transform-origin: 50% 50%;
+            display: flex;
+            position: relative;
+            // font-size: 75%;
+            // font-family: $fontFamily;
+            // font-weight: $fontWeight;
+            // line-height: 75%;
+            // color: #eee;
+            // color: $lightGray2;
+            pointer-events: none;
+            backface-visibility: hidden;
+
+            &.boxShadow {
+                box-shadow: 1px 2px 1px -2px rgba(0, 0, 0, 0.1), 1px 3px 5px 0px rgba(0, 0, 0, 0.1), 1px 3px 15px 0px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .tooltip-content-inner {
+            display: inline-block;
+            overflow: hidden;
+            // background: $gray1;
+            // background: #555;
+            padding: 4px 8px;
+            pointer-events: none;
+            backface-visibility: hidden;
+        }
+
+        .tooltip-content-inner-inner {
+            display: inline-block;
+            width: auto;
+            height: auto;
+        }
+
+        // &[device="mobile"] {
+        //     .tooltip-content {
+        //         // font-size: 100%;
+        //         // line-height: 100%;
+        //     }
+        // }
+
+        &[position="bottom"] {
+            align-items: flex-end;
+        }
+
+        &[position="right"] {
+            justify-content: flex-start;
+            transform-origin: 100% 50%;
+
+            .tooltip-content {
+                top: 0px;
+                right: calc(-100% - 10px);
+            }
+        }
+
+        &[position="left"] {
+            justify-content: flex-end;
+            transform-origin: 0% 50%;
+
+            .tooltip-content {
+                top: 0px;
+                left: calc(-100% - 10px);
+            }
+        }
+
+        &[position="top"] {
+            align-items: flex-end;
+            transform-origin: 50% 0%;
+
+            .tooltip-content {
+                top: calc(-100% - 10px);
+            }
+        }
+    }
+}

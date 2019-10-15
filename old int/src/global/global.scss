@@ -1,0 +1,24 @@
+$textColor: #333;
+$primary: #59a2d8;
+$secondary: #f59700;
+$tertiary: #c10005;
+
+:root {
+    --liftedInnerColor: rgba(0, 0, 0, 0.15);
+    --liftedOuterColor: rgba(0, 0, 0, 0.10);
+    --liftedDropColor: rgba(0, 0, 0, 0.25);
+    --boxShadowLifted:
+        inset 0px 0px 0px 1px var(--liftedInnerColor),
+        0px 2px 0px 0px var(--liftedOuterColor),
+        0.2rem 0.8rem 1.6rem var(--liftedDropColor);
+}
+
+.expandable {
+    transition: transform 0.2s;
+    transform: scaleY(0);
+    transform-origin: center top;
+
+    &.expanded {
+        transform: scaleY(1);
+    }
+}

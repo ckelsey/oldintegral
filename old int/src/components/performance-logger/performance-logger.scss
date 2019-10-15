@@ -1,0 +1,149 @@
+:host {
+    display: block;
+    width: 100%;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .container {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        transition: height 0.2s;
+
+        &.expanded {
+            height: 35px !important;
+        }
+
+        .border {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            box-shadow: inset 0px 0px 0px 1px rgba(85, 85, 85, 0.24);
+        }
+
+        .performance-header {
+            background: #555;
+            color: #eee;
+            height: 21px;
+            padding: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .icon {
+                height: 100%;
+                display: inline-block;
+                cursor: pointer;
+
+                &.active {
+                    color: #ffd901;
+                }
+            }
+
+            .toggle {
+                height: 14px;
+                cursor: pointer;
+            }
+
+            svg {
+                width: auto;
+                height: 100%;
+                fill: currentColor;
+            }
+        }
+
+        #range-bar {
+            width: 100%;
+            height: 20px;
+            background: #eee;
+        }
+
+        #range-window {
+            width: 10px;
+            height: 100%;
+            background: #dedede;
+            position: relative;
+            justify-content: space-between;
+            max-width: 100%;
+            cursor: pointer;
+            cursor: grab;
+
+            &.grabbing {
+                cursor: grabbing;
+            }
+        }
+
+        .range-handle {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #fff;
+            position: absolute;
+            box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.12);
+            top: 1px;
+            cursor: pointer;
+            cursor: grab;
+
+            &.grabbing {
+                cursor: grabbing;
+            }
+
+            &.range-handle-left {
+                left: -10px;
+            }
+
+            &.range-handle-right {
+                right: -10px;
+            }
+        }
+
+        #graphs {
+            width: 100%;
+            background: linear-gradient(to bottom, #eee 22px, #fff 22px, #fff 100%);
+
+            #timeline {
+                white-space: nowrap;
+                background: #eee;
+                padding: 3px 0px;
+
+                .timeline-marker {
+                    transform-origin: 0px 0px;
+                    width: 1000px;
+                    display: inline-block;
+                    background: #eee;
+                }
+            }
+
+            #graphs-inner {
+                position: relative;
+                transform-origin: 0px 0px;
+
+                .graph-second {
+                    position: relative;
+                    height: 100%;
+                    width: 1000px;
+                    display: inline-block;
+                    cursor: crosshair;
+                }
+
+                #fps-memory-container {
+                    white-space: nowrap;
+                    height: 100px;
+
+                    svg {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

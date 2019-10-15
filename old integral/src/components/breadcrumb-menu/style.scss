@@ -1,0 +1,25 @@
+@import '../../global/global.scss';
+
+:host {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    .container {
+        height: 100%;
+    }
+
+    breadcrumb-trail {
+        padding: 0px 14px;
+    }
+
+    #menu-list {
+        a {
+            display: block;
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+}

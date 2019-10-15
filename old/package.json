@@ -1,0 +1,12 @@
+{
+  "name": "conduco-demo",
+  "description": "",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.2",
+    "gulp": "^3.9.1"
+  }
+}
